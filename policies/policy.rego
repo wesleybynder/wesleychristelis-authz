@@ -1,7 +1,9 @@
 package example
 
-default allow = false
+import rego.v1
 
-allow {
-  input.user.role == "admin"
+default allow := false
+
+allow if {
+	"admin" in input.user.role
 }
