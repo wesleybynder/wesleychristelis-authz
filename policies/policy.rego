@@ -1,9 +1,16 @@
-package example
+# package example
 
-import rego.v1
+# default allow = false
 
-default allow := false
+# # Allow access if the user has the role "admin"
+# allow {
+#   input.user.role == "admin"
+# }
+package policy
 
-allow if {
-	"admin" in input.user.role
+import future.keywords.if
+import future.keywords.in
+
+is_admin if {
+    "admin" in input.user.roles
 }
