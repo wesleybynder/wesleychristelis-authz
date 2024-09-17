@@ -10,6 +10,11 @@ allow if {
 	is_admin
 }
 
+# Set the status code to 200 (OK) if allow is true, otherwise 401 (Unauthorized)
+status_code := 200 if {
+    allow
+} else := 401
+
 allowed_actions := ["POST"]
 
 is_action_allowed if input.attributes.request.http.method in allowed_actions
