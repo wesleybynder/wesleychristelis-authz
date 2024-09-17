@@ -51,3 +51,19 @@ bearer_token := t if {
 	startswith(v, "Bearer ")
 	t := substring(v, count("Bearer "), -1)
 }
+
+
+# Example Input
+# {
+#   "attributes": {
+#     "request": {
+#       "http": {
+#         "method": "POST",
+#         "path": "/app",
+#         "headers": {
+#           "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4ifQ.UHnffynBjuE3dcwEUyqldVbN-5QzMT-oiyXqkRbWJOI"
+#         }
+#       }
+#     }
+#   }
+# }
